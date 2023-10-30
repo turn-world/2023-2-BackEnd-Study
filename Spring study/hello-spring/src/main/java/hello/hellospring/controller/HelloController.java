@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+
 @Controller
 public class HelloController {
     @GetMapping("hello") // 정적 컨텐츠
@@ -13,7 +14,7 @@ public class HelloController {
         model.addAttribute( "data","hello!!");
         return "hello";
     }
-    @GetMapping("hello-mvc") // view를 프로그래밍을 한걸로 넘겨준것 
+    @GetMapping("hello-mvc") // view를 프로그래밍을 한걸로 넘겨준것
     public String helloMvc(@RequestParam("name") String name,Model model){
         model.addAttribute("name",name );
         return "hello-template";
@@ -29,7 +30,6 @@ public class HelloController {
         Hello hello  = new Hello();
         hello.setName(name);
         return hello;
-
     }
 
     static class Hello{
